@@ -12,3 +12,5 @@ echo "############## compartments activos "
 cat $T | jq -r '.outputs.compartments.value.compartments[] | select( .state == "ACTIVE" ) | .name'
 echo "############## computo"
 cat $T | jq -r '.outputs.oci_core_instances.value[].instances[] | .display_name+" "+.region+" "+.availability_domain+" "+.shape+" "+.state'
+echo "############## db-system"
+cat $T | jq '.outputs.oci_database_db_systems.value[].db_systems[] | .display_name+" "+.availability_domain+" "+.shape+" "+(.node_count|tostring)+" "+(.data_storage_size_in_gb|tostring)+" "+.database_edition'
