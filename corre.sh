@@ -9,5 +9,5 @@ if [ a$1 == a ]; then
 fi
 export TF_VAR_region=$1
 terraform init
-nohup terraform apply --auto-approve &
-tail -f nohup.out
+nohup terraform apply -auto-approve -state=$NOMBRE.$TF_VAR_region.salida > $NOMBRE.$TF_VAR_region.log &
+tail -f $NOMBRE.$TF_VAR_region.log 
