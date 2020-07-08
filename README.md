@@ -46,4 +46,10 @@ Esperar hasta que aparezca mensaje de EXITO
 NOTA: No cerrar el browser
 si entrega mensaje de inactividad, simplemente reconectarse
 
+![image0009](image0009.png)
 
+Una vez reconectado, volver al directorio y verificar estado
+
+           $ cd inventarioOCI
+           $ ps -ef
+           $ tail nohup.out
