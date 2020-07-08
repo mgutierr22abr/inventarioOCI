@@ -42,10 +42,3 @@ NOTA: No cerrar el browser
 si entrega mensaje de inactividad, simplemente reconectarse
 
 
-
-
-
-￼
-
-
-
