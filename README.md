@@ -13,26 +13,26 @@ Ejecutar comando
 ![image0002](image0002.png)
 
 Ir al directorio y revisar regiones disponibles
-$ cd inventarioOCI
-$ ./regiones.sh
+           $ cd inventarioOCI
+           $ ./regiones.sh
 
 ![image0003](image0003.png)
 
 Ejecutar el inventario
 
-nohup ./corre.sh us-phoenix-1 &
+           $ nohup ./corre.sh us-phoenix-1 &
 
 ![image0004](image0004.png)
 
 Verificar Ejecución en proceso de "corre.sh"
 
-ps -ef 
+           $ ps -ef 
 
 ![image0005](image0005.png)
 
 Verificar Resultado/Estado (Mensaje EXITO)
 
-tail nohup.out
+           $ tail nohup.out
 
 ![image0006](image0006.png)
 
