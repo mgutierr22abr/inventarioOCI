@@ -13,8 +13,8 @@ Ejecutar comando
 ![image0002](image0002.png)
 
 Ir al directorio y revisar regiones disponibles
-cd inventarioOCI
-./regiones.sh
+            cd inventarioOCI
+            ./regiones.sh
 
 ![image0003](image0003.png)
 
