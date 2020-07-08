@@ -1,10 +1,14 @@
 # inventarioOCI
 Obtiene el inventario de un tenancy OCI
 
+Para generar, primero hay que ingresar a la consola OCI con un usuario con privilegios para VER el tanancy
+Luego hay que entrar a la Consola "Cloud Shell"
+
 ![image0001](image0001.png)
 
 Ejecutar comando
-git clone https://github.com/mgutierr22abr/inventarioOCI.git
+
+$git clone https://github.com/mgutierr22abr/inventarioOCI.git
 
 ![image0002](image0002.png)
 
