@@ -8,7 +8,7 @@ Luego hay que entrar a la Consola "Cloud Shell"
 
 Ejecutar comando
 
-$git clone https://github.com/mgutierr22abr/inventarioOCI.git
+           $ git clone https://github.com/mgutierr22abr/inventarioOCI.git
 
 ![image0002](image0002.png)
 
