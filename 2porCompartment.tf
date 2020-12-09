@@ -251,13 +251,13 @@ data "oci_nosql_tables" "oci_nosql_tables" {
 output "oci_nosql_tables" {
 value = data.oci_nosql_tables.oci_nosql_tables
 }
-data "oci_oce_oce_instances" "oci_oce_oce_instances" {
+/*data "oci_oce_oce_instances" "oci_oce_oce_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
 output "oci_oce_oce_instances" {
 value = data.oci_oce_oce_instances.oci_oce_oce_instances
-}
+}*/
 data "oci_ocvp_sddcs" "oci_ocvp_sddcs" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
