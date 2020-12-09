@@ -279,13 +279,13 @@ data "oci_ons_notification_topics" "oci_ons_notification_topics" {
 output "oci_ons_notification_topics" {
 value = data.oci_ons_notification_topics.oci_ons_notification_topics
 }
-data "oci_osmanagement_managed_instance_groups" "oci_osmanagement_managed_instance_groups" {
+/*data "oci_osmanagement_managed_instance_groups" "oci_osmanagement_managed_instance_groups" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
 output "oci_osmanagement_managed_instance_groups" {
 value = data.oci_osmanagement_managed_instance_groups.oci_osmanagement_managed_instance_groups
-}
+}*/
 data "oci_resourcemanager_stacks" "oci_resourcemanager_stacks" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
