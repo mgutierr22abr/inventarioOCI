@@ -14,3 +14,5 @@ echo "############## computo"
 cat $T | jq -r '.outputs.oci_core_instances.value[].instances[] | .display_name+" "+.region+" "+.availability_domain+" "+.shape+" "+.state'
 echo "############## db-system"
 cat $T | jq '.outputs.oci_database_db_systems.value[].db_systems[] | .display_name+" "+.availability_domain+" "+.shape+" "+(.node_count|tostring)+" "+(.data_storage_size_in_gb|tostring)+" "+.database_edition'
+echo "############## detalle"
+cat $T | jq '.resources[].instances[].attributes' | grep ocid1 | grep '"id"' | awk -F'"' '{print $4}' | sort -u
