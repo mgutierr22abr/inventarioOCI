@@ -77,7 +77,7 @@ locals {
 }
 data "oci_core_instance" "oci_core_instance" {
         count = length(local.insta)
-	instance_id = local.i[count.index]
+	instance_id = local.insta[count.index]
 }
 
 data "oci_core_nat_gateways" "oci_core_nat_gateways" {
