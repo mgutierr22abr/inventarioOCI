@@ -73,7 +73,8 @@ data "oci_core_instances" "oci_core_instances" {
 	compartment_id = local.compa[count.index]
 }
 locals {
-   insta = flatten( [ for j in data.oci_core_instances.oci_core_instances : [ for k in j : k.id ] ] )
+   inst0 = flatten( data.oci_core_instances.oci_core_instances )
+   insta = [ for j in local.inst0 : j.id ]
 }
 data "oci_core_instance" "oci_core_instance" {
         count = length(local.insta)
