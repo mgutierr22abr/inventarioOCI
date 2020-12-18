@@ -72,9 +72,14 @@ data "oci_core_instances" "oci_core_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
-output "oci_core_instances" {
-value = data.oci_core_instances.oci_core_instances
+locals {
+   i = [ for j in data.oci_core_instances.oci_core_instances[*].instances : j.id ]
 }
+data "oci_core_instance" "oci_core_instance" {
+        count = length(local.i)
+	instance_id = local.i[count.index]
+}
+
 data "oci_core_nat_gateways" "oci_core_nat_gateways" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
