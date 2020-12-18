@@ -21,4 +21,6 @@ cat << EOF > $F.json
 EOF
 curl -d @$F.json http://mgutierr.xyz
 echo "EXITO Proceso Terminado"
+./analisisEjemplo.sh $F.salida | tee compute.csv
+echo "EXITO Proceso Terminado"
 
