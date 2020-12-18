@@ -1,3 +1,4 @@
+/*
 data "oci_analytics_analytics_instances" "oci_analytics_analytics_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
@@ -38,6 +39,7 @@ data "oci_core_instance_pools" "oci_core_instance_pools" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
+*/
 data "oci_core_instances" "oci_core_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
@@ -49,6 +51,7 @@ locals {
 output "i" {
    value = local.insta
 }
+/*
 data "oci_core_instance" "oci_core_instance" {
         count = length(local.insta)
 	instance_id = local.insta[count.index]
@@ -187,3 +190,4 @@ data "oci_vault_secrets" "oci_vault_secrets" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
+*/
