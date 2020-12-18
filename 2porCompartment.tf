@@ -1,4 +1,3 @@
-/*
 data "oci_analytics_analytics_instances" "oci_analytics_analytics_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
@@ -39,22 +38,23 @@ data "oci_core_instance_pools" "oci_core_instance_pools" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
-*/
 data "oci_core_instances" "oci_core_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
 locals {
-   inst0 = [ for k in data.oci_core_instances.oci_core_instances[*] : i.id ]
-   #insta = [ for j in local.inst0 : j.id ]
+   inst0 = [ for k in data.oci_core_instances.oci_core_instances[*] : k.instances ]
+   insta = flatten( [ for j in local.inst0 : [ for k in j : k.id ] ] )
 }
 output "i" {
-   value = local.inst0
+   value = local.insta
 }
-/*
 data "oci_core_instance" "oci_core_instance" {
         count = length(local.insta)
-	instance_id = local.insta[count.index]
+        instance_id = local.insta[count.index]
+}
+output "resumen" {
+value = data.oci_core_instance.oci_core_instance
 }
 
 data "oci_core_nat_gateways" "oci_core_nat_gateways" {
@@ -158,10 +158,12 @@ data "oci_nosql_tables" "oci_nosql_tables" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
-/*data "oci_oce_oce_instances" "oci_oce_oce_instances" {
+/*
+data "oci_oce_oce_instances" "oci_oce_oce_instances" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
+*/
 data "oci_ocvp_sddcs" "oci_ocvp_sddcs" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
@@ -178,6 +180,7 @@ data "oci_ons_notification_topics" "oci_ons_notification_topics" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
+*/
 data "oci_resourcemanager_stacks" "oci_resourcemanager_stacks" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
@@ -190,4 +193,4 @@ data "oci_vault_secrets" "oci_vault_secrets" {
         count = length(local.compa)
 	compartment_id = local.compa[count.index]
 }
-*/
+
